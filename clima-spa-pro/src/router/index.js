@@ -1,15 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import DetalleView from '../views/DetalleView.vue'
-
-const routes = [
-  { path: '/', name: 'Home', component: HomeView },
-  { path: '/lugar/:id', name: 'Detalle', component: DetalleView, props: true }
-]
+import { createRouter, createWebHashHistory } from 'vue-router' // Cambia esto
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHashHistory(), // Cambia a Hash History
+  routes: [
+    { path: '/', name: 'Home', component: HomeView },
+    { path: '/lugar/:id', name: 'Detalle', component: DetalleView, props: true }
+  ]
 })
-
-export default router
